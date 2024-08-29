@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='notes.css')}}">
+    <script src="{{url_for('static', filename = 'script.js')}}"></script>
+    <title>ToDo-Notes</title>
+</head>
+<body>
+    <div class="container">
+        <div class="notes">
+            <form action="/form" method="post">
+                <div class="label titles">
+                    <label for="title" class="titleLabel">
+                        Enter the Title:
+                    </label>
+                    <input type="text" class="input" name="title" id="title" placeholder="Provide a Title...." required>
+                </div>
+                <div class="label description">
+                    <label for="desc">Enter the description:</label>
+                    <textarea type="area" class="input" name="desc" id="desc" placeholder="Write a description...."></textarea>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+    </div>
+
+        </div>
+        <div class="editform hiddenContent" id="editHidden">
+            <!-- <div class="editnotes">
+                <form action="/form" method="post">
+                        <input type="text" class="input" name="edtedtitle" id="editeddesc" placeholder="Provide new Title...." required>
+                        <textarea type="area" class="input" name="editeddesc" id="editeddesc" placeholder="Hard to code the editing part write Wisely...."></textarea>
+                        <button type="submit">Edited..</button>
+                    </div> -->
+        </div>
+
+    <div class="splitter"></div>
+    <div class="table">
+        <table>
+            <tr>
+                <th><h4>S.no</h4></td>
+                <th class="head"><h4>Notes</h4></td>
+                <th><h4>Operations</h4></td>
+            </tr>
+            {% for data in datas %}
+            <tr>
+                <td><h3>{{loop.index}}</h3></td>
+                <td><h4 class="mid">{{data["title"]}}</h4><p class="mid">{{data["desc"]}}</p></td>
+                <td class="ops">
+                    <h4 class="edit" data-id="{{ data['_id'] }}" onclick="load(this)">Edit</h4>
+                    <a href="{{ url_for('delete', id=data['_id']) }}" class="delete"><h4>Delete</h4></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

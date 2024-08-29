@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>To-Do Master</title>
+</head>
+<body>
+    <div class="outer-container">
+        <div class="inner-container">
+            <h3 class="head">In the World of notes</h3>
+            <div class="split"></div>
+            <form class="input flex-inner" action="/signin" method="post">
+                <label class="item" for="username" id="ulabel">Enter the Name:</label>
+                <input class="item uname" type="text" name="username" id="username" placeholder="What to Call you">
+                <label class="item" for="username" id="plabel">Enter the Password:</label>
+                <input class="item" type="password" name="password" id="password" placeholder="Secret Key"> 
+                <button class="button" type="submit">Enter</button>
+                <h4 class="textBelow item">Dont have an Account? <a href="signup">Sign up</a></h4>
+            </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: #F3F4F6; /* Soft light gray background */
+}
+
+.container{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    padding: 2rem;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    font-size: larger;
+    font-weight: 600;
+    color: #333; /* Dark gray for labels */
+}
+
+input, textarea{
+    all: unset;
+    width: 60%;
+    padding: 0.3rem 1rem;
+    background-color: #FFFFFF; /* White background for inputs */
+    border: 1px solid #6a6a6a; /* Light gray border */
+    border-radius: 25px;
+    box-shadow: inset -3px -3px 5px #FFFFFF, inset 3px 3px 5px #DADCE0; /* Softer shadows */
+    margin-top: 0.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #555; /* Medium gray text color */
+}
+
+input::placeholder, textarea::placeholder{
+    color: #1c1c1c; /* Muted gray for placeholders */
+    font-weight: 500;
+}
+
+input:focus, textarea:focus{
+    border-color: #A3BE8C; /* Soft green focus state */
+    box-shadow: 0 0 8px rgba(163, 190, 140, 0.3); /* Soft green glow */
+    border: 1px solid black;
+}
+
+textarea{
+    width: 80%;
+    height: 4rem;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+form{
+    width: 100%;
+}
+
+td, table, th{
+    border: 1px solid #C0C4CC; /* Light gray borders */
+    border-collapse: collapse;
+}
+
+table{
+    margin-top: 1rem;
+    width: 100%;
+    box-shadow: #DADCE0 -5px -5px 5px, #999 2px 2px 5px; /* Softer shadows */
+}
+
+th{
+    background-color: #4A5568; /* Dark slate gray */
+    color: #FFFFFF; /* White text on headers */
+}
+
+.mid{
+    text-align: start;
+    margin: 1rem 2rem;
+}
+
+.ops{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0.5rem;
+}
+
+button{
+    all: unset;
+    background-color: #63B3ED; /* Light blue background */
+    color: #000000; /* White text */
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    border: 2px solid #3182CE; /* Darker blue border */
+    border-radius: 2rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover{
+    background-color: #3182CE; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    color: #FFFFFF;
+    border: 2px solid #2B6CB0; /* Darker blue border on hover */
+}
+
+.edit, .delete{
+    width: 75%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 2rem;
+    box-shadow: -4px -4px 5px #F0F0F3, 4px 4px 10px #A0A3A8; /* Softer shadows */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit{
+    background-color: #CBD5E0; /* Light blue-gray */
+    color: #000000; /* Dark slate gray text */
+    margin: 0.2rem;
+    border: 1px solid black;
+}
+
+.editnotes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    width: 80%;
+}
+.hiddencontent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit:hover{
+    background-color: #B3C2D4; /* Slightly darker on hover */
+    color: #000000;
+}
+
+.delete{
+    background-color: #FC8181; /* Soft red */
+    color: rgb(0, 0, 0);
+    margin: 0.2rem;
+    border: 1px black solid;
+}
+
+.delete:hover{
+    background-color: #E53E3E; /* Darker red on hover */
+}
+
+td{
+    text-align: center;
+}
+
+.notes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+table a{
+    text-decoration: none;
+}
+
+.splitter{
+    height: 3px;
+    width: 100%;
+    background-color: #333; /* Dark gray separator */
+}
