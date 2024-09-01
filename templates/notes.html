@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='notes.css')}}">
     <script src="{{url_for('static', filename = 'script.js')}}"></script>
+    <link rel="icon" href="{{url_for('static', filename='notepad.png')}}">
     <title>ToDo-Notes</title>
 </head>
 <body>
+    <div class="navbar">
+        <h1 class="brand">NoteApp</h1>
+        <a href="/logout"><h3 class="logout">Logout</h1></a>
+    </div>
     <div class="container">
         <div class="notes">
             <form action="/form" method="post">

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/000/576/246/original/vector-sign-of-people-icon.jpg">
     <title>To-Do Master</title>
 </head>
 <body>
@@ -11,9 +12,9 @@
         <div class="inner-container">
             <h3 class="head">Entering World of notes</h3>
             <div class="split"></div>
-            <form class="input flex-inner" action="/" method="post">
+            <form class="input flex-inner" action="/signup-form" method="post">
                 <label class="item" for="username" id="ulabel">Enter the Mail:</label>
-                <input class="item uname" type="email" name="username" id="username" placeholder="example@diary.notes">
+                <input class="item uname" type="email" name="mail" id="mail" placeholder="example@diary.notes">
 
                 <label class="item" for="username" id="ulabel">Enter the Name:</label>
                 <input class="item uname" type="text" name="username" id="username" placeholder="Searching dictionaries?">
@@ -22,7 +23,7 @@
                 <input class="item" type="password" name="password" id="password" placeholder="Type a Secret one">
 
                 <label class="item" for="username" id="plabel">Confirm Password:</label>
-                <input class="item" type="password" name="password" id="password" placeholder="That one again"> 
+                <input class="item" type="password" name="newpassword" id="newpassword" placeholder="That one again"> 
 
                 <button class="button" type="submit">Enter</button>
                 <h4 class="textBelow item">Already have an Account? <a href="/signin">Sign in</a></h4>

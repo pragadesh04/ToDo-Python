@@ -122,6 +122,33 @@ button:hover{
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.navbar{
+    /* margin: -1rem -2px; */
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    /* background-color: #1c1c1c; */
+}
+
+.brand{
+    margin-left: 1rem;
+}
+
+.navbar a{
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.logout{
+    padding: 0.3rem 1rem;
+    background-color: rgb(157, 157, 157);
+    color: black;
+
+    border-radius: 1rem;
+}
+
 .edit{
     background-color: #CBD5E0; /* Light blue-gray */
     color: #000000; /* Dark slate gray text */

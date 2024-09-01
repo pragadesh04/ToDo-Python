@@ -29,7 +29,7 @@ label{
     box-shadow: rgb(255, 254, 254) -10px -10px 20px, rgb(48, 48, 48) 5px 5px 10px;
     padding: 1rem;
     border-radius: 2rem;
-    min-width: 300px;
+    min-width: 400px;
     max-width: 600px;
     background-color: rgb(208, 208, 208); /* Medium grey background */
 }

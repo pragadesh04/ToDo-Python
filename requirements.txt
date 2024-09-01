@@ -3,3 +3,4 @@ flask-wtf
 flask-sqlalchemy
 flask-login
 flask_pymongo
+Flask-Session

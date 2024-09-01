@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'message.css')}}">
+    <title>Hello</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inner">
+        <h1  class="mm">{{message_head}}</h1>
+        <h2 class="mm">{{message}}</h2>
+        <div class="buttons">
+            <!-- <a href="/signin">SignIn</a> -->
+            <a href="javascript:history.back()">SignIUp</a>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
