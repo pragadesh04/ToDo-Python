@@ -15,7 +15,7 @@
     </div>
     <div class="container">
         <div class="notes">
-            <form action="/form" method="post">
+            <form action="/form/{{id}}" method="post">
                 <div class="label titles">
                     <label for="title" class="titleLabel">
                         Enter the Title:
@@ -54,7 +54,7 @@
                 <td><h4 class="mid">{{data["title"]}}</h4><p class="mid">{{data["desc"]}}</p></td>
                 <td class="ops">
                     <h4 class="edit" data-id="{{ data['_id'] }}" onclick="load(this)">Edit</h4>
-                    <a href="{{ url_for('delete', id=data['_id']) }}" class="delete"><h4>Delete</h4></a>
+                    <a href="{{ url_for('deleted', id=data['_id']) }}" class="delete"><h4>Delete</h4></a>
                 </td>
             </tr>
             {% endfor %}

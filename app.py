@@ -1,6 +1,6 @@
 import bcrypt as bc
 from flask_pymongo import PyMongo
-from flask import Flask, session, render_template, request, url_for, redirect
+from flask import Flask, session, render_template, request, url_for, redirect, flash
 from bson import ObjectId
 import os
 import re
@@ -31,18 +31,21 @@ notes = db.ToDo
 users = db.usersToDo
 
 @app.route("/")
-@app.route("/home/<name>")
-def home(name):
+@app.route("/home/<name>/<id>")
+def home(name = None, id=None):
     if not session.get("username"):
         return render_template("login.html")
     
-    datas = list(notes.find())
+    session["user_id"] = id
+    datas = list(notes.find({"user_id":ObjectId(id)}))
+    print(datas)
     print(f"{session.get('username')}".center(150, "="))
     if datas is not None:
-        return render_template("notes.html", datas=datas)
+        return render_template("notes.html", datas = datas, id = id)
+
 
 @app.route("/edited/<id>", methods=['POST', 'GET'])
-def edit(id):
+def edit(id=None):
     title = request.form.get("editedtitle")
     desc = request.form.get("editeddesc")
     query = {"_id": ObjectId(id)}
@@ -56,26 +59,32 @@ def edit(id):
     if update_data:
         notes.update_one(query, {"$set": update_data})
     
-    datas = list(notes.find())
-    return render_template("notes.html", datas=datas)
+    datas = list(notes.find({"user_id":ObjectId(id)}))
+    return redirect(url_for("home", name = session["username"], id =ObjectId(session["user_id"])))
 
-@app.route("/form", methods=['POST', 'GET'])
-def form():
+
+@app.route("/form/<id>", methods=['POST', 'GET'])
+def form(id):
     try:
+        print(f"""{id}""".center(150,"-"))
+        
         title = request.form.get("title")
         desc = request.form.get("desc")
-        notes.insert_one({"title": title, "desc": desc})
-        datas = list(notes.find())
-        return render_template("notes.html", datas=datas)
+        
+        
+        
+        notes.insert_one({"user_id":ObjectId(id),"title": title, "desc": desc})
+        datas = list(notes.find({"user_id":ObjectId(id)}))
+        return redirect(url_for("home", name = session["username"], id = id))
     except Exception as e:
         print(e)
         return "Error"
 
 @app.route("/delete/<id>")
-def delete(id):
+def deleted(id):
     query = {"_id": ObjectId(id)}
     notes.delete_one(query)
-    return redirect(url_for('home'))
+    return redirect(url_for('home', name = session["username"], id= session["user_id"]))
 
 @app.route("/signup")
 def signup():
@@ -122,13 +131,14 @@ def signin_form():
     
     if bc.checkpw(password.encode('utf-8'), userN["password"]):
         session['username'] = name
-        return redirect(url_for("home", name  = name))
+        return redirect(url_for("home", name  = name, id = userN["_id"]))
     else:
-        return redirect(url_for("signin"))
+        return render_template("message.html", message_head  = "something", message = "sorry, Something Went Wromg")
 
 @app.route("/logout")
 def logout():
     session.pop('username', None)
+    session.pop('user_id', None)
     return redirect(url_for("home"))
 
 @app.route("/message")
