@@ -13,7 +13,7 @@ A simple Todo web app with user authentication, allowing each user to manage the
 
 - **Frontend:** HTML, CSS
 - **Backend:** Python, Flask
-- **Database:** SQLite (or your choice)
+- **Database:** MongoDB
 
 ## Installation
 
