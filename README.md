@@ -1,30 +1,3 @@
-### Description
-
-**Todo App with User Authentication**
-
-This Todo web app allows users to manage their personal to-do lists. Each user can sign up, log in, and access their own individual to-do items. The app uses a combination of HTML and CSS for the frontend and Python with Flask for the backend.
-
-**Features:**
-- User Registration and Login
-- Create, Read, Update, and Delete (CRUD) tasks
-- Responsive and user-friendly interface
-- User-specific data storage
-
-**Tech Stack:**
-- **Frontend:** HTML, CSS
-- **Backend:** Python, Flask
-- **Database:** SQLite (or your preferred database)
-
-**How It Works:**
-1. Users can register an account and log in.
-2. Once logged in, users can create, view, update, and delete their own to-do items.
-3. Each user's to-do list is stored and managed separately.
-
----
-
-### README.md
-
-```markdown
 # Todo Web App
 
 A simple Todo web app with user authentication, allowing each user to manage their own personal to-do list. Built using HTML, CSS, and Python with Flask.
